@@ -62,8 +62,8 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()){
-                            case R.id.mn_edit :
-                                Intent in = new Intent(mInflater.getContext(), AddMatkulActivity.class);
+                            case R.id.mn_trans :
+                                Intent in = new Intent(mInflater.getContext(), TransferActivity.class);
                                 mInflater.getContext().startActivity(in);
                                 Toast.makeText(mInflater.getContext(), "edit "+holder.user_id, Toast.LENGTH_SHORT).show();
                                 return true;
