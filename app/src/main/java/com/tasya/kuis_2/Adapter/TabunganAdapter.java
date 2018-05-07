@@ -53,7 +53,7 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
                 Toast.makeText(mInflater.getContext(), "Detail kode "+holder.kode_mk, Toast.LENGTH_SHORT).show();
             }
         });
-        holder.matkul.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.tabungn.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 PopupMenu popup = new PopupMenu(mInflater.getContext(), view);
@@ -83,27 +83,6 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
         });
     }
 
-    // total number of rows
-    @Override
-    public int getItemCount() {
-        return mData.size();
-    }
-
-    // stores and recycles views as they are scrolled off screen
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        public int kode_mk;
-        public TextView nama_mk, dosen, sks;
-        public ConstraintLayout matkul;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            matkul = itemView.findViewById(R.id.list_tbgn);
-            nama_mk = itemView.findViewById(R.id.tx_li_idusr);
-            dosen = itemView.findViewById(R.id.tx_li_user);
-            sks = itemView.findViewById(R.id.tx_li_jml);
-        }
-
-    }
 
     // convenience method for getting data at click position
     public Tabungan getItem(int id) {
