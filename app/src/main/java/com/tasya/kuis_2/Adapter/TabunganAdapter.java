@@ -12,6 +12,9 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tasya.kuis_2.Model.Tabungan;
+import com.tasya.kuis_2.R;
+
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -32,18 +35,17 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
     @NonNull
     @Override
     public TabunganAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.list_matkul, parent, false);
+        View view = mInflater.inflate(R.layout.list_tabungan, parent, false);
         return new ViewHolder(view);
     }
 
     // binds the data to the textview in each row
     @Override
-    public void onBindViewHolder(@NonNull final MatkulAdapter.ViewHolder holder, final int position) {
-        final Kuliah kul = mData.get(position);
-        holder.kode_mk = kul.getKode_mk();
-        holder.nama_mk.setText(kul.getNama_mk());
-        holder.dosen.setText(kul.getNama_dosen());
-        holder.sks.setText((kul.getSks()+""));
+    public void onBindViewHolder(@NonNull final TabunganAdapter.ViewHolder holder, final int position) {
+        final Tabungan tab = mData.get(position);
+        holder.user_id = tab.getUser_id();
+        holder.nama_user.setText(tab.getNama_user());
+        holder.koin.setText((tab.getKoin()+""));
         holder.matkul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,10 +65,10 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
                             case R.id.mn_edit :
                                 Intent in = new Intent(mInflater.getContext(), AddMatkulActivity.class);
                                 mInflater.getContext().startActivity(in);
-                                Toast.makeText(mInflater.getContext(), "edit "+holder.kode_mk, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mInflater.getContext(), "edit "+holder.user_id, Toast.LENGTH_SHORT).show();
                                 return true;
                             case R.id.mn_delete :
-                                Toast.makeText(mInflater.getContext(), "hapus "+holder.kode_mk, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mInflater.getContext(), "hapus "+holder.user_id, Toast.LENGTH_SHORT).show();
                                 return true;
                             default:
                                 return true;
@@ -94,16 +96,16 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
 
         public ViewHolder(View itemView) {
             super(itemView);
-            matkul = itemView.findViewById(R.id.list_mk);
-            nama_mk = itemView.findViewById(R.id.tx_li_mk);
-            dosen = itemView.findViewById(R.id.tx_li_dosen);
-            sks = itemView.findViewById(R.id.tx_li_sks);
+            matkul = itemView.findViewById(R.id.list_tbgn);
+            nama_mk = itemView.findViewById(R.id.tx_li_idusr);
+            dosen = itemView.findViewById(R.id.tx_li_user);
+            sks = itemView.findViewById(R.id.tx_li_jml);
         }
 
     }
 
     // convenience method for getting data at click position
-    public Kuliah getItem(int id) {
+    public Tabungan getItem(int id) {
         return mData.get(id);
     }
 
@@ -116,7 +118,7 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
         this.position = position;
     }
 
-    public void filterList(ArrayList<Kuliah> filterdNames) {
+    public void filterList(ArrayList<Tabungan> filterdNames) {
         this.mData = filterdNames;
         notifyDataSetChanged();
     }

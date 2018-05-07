@@ -1,5 +1,7 @@
 package com.tasya.kuis_2.API;
 
+import com.tasya.kuis_2.Model.Users;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
