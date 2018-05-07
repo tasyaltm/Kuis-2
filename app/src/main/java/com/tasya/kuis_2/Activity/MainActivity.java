@@ -1,5 +1,8 @@
 package com.tasya.kuis_2.Activity;
-
+/*
+* Tasya Leila Tazkiyah Muna
+* 1505509
+* */
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
