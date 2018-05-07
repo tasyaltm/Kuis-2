@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Kuis 2</string>
+    <!--Text-->
+    <string name="login_tag">Masuk ke Akun Anda!</string>
+    <string name="register_tag">Segera Daftarkan diri Anda!</string>
+    <string name="link_regis">Belum Punya Akun? Buat Sekarang!</string>
+    <!--Hints-->
+    <string name="email_h">Email</string>
+    <string name="pass_h">Password</string>
+    <!--Button-->
+    <string name="log_btn">Masuk</string>
+    <string name="reg_btn">Daftar</string>
+    <string name="trans_btn">Transfer</string>
+    <!--dialog-->
+    <string name="loading">Sedang Diproses</string>
+</resources>
