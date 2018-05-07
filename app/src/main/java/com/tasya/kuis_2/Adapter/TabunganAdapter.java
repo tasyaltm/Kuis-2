@@ -47,10 +47,10 @@ public class TabunganAdapter extends RecyclerView.Adapter<TabunganAdapter.ViewHo
         holder.user_id = tab.getUser_id();
         holder.nama_user.setText(tab.getNama_user());
         holder.koin.setText((tab.getKoin()+""));
-        holder.matkul.setOnClickListener(new View.OnClickListener() {
+        holder.tabungn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mInflater.getContext(), "Detail kode "+holder.kode_mk, Toast.LENGTH_SHORT).show();
+                Toast.makeText(mInflater.getContext(), "Detail kode "+holder.user_id, Toast.LENGTH_SHORT).show();
             }
         });
         holder.tabungn.setOnLongClickListener(new View.OnLongClickListener() {
